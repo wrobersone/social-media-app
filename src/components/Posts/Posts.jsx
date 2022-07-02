@@ -1,11 +1,10 @@
 import React from 'react';
-import './posts.css';
-import { PostsData } from '../../../../data/PostsData';
-import Post from '../Post';
-
+import './Posts.css';
+import { PostsData } from '../../data/PostsData';
+import Post from '../Post/Post';
 const Posts = () => {
   return (
-    <div className="posts">
+    <div className="Posts">
       {PostsData.map((post, id) => {
         return <Post data={post} id={id} />;
       })}

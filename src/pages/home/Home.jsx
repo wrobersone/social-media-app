@@ -1,14 +1,16 @@
 import React from 'react';
 import './home.css';
 import Profile from '../../components/profile/Profile';
-import Feed from '../../components/feed/Feed';
+
+import PostSide from '../../components/postSide/PostSide';
+import RightSide from '../../components/rightSide/RightSide';
 
 const Home = () => {
   return (
     <div className="home">
       <Profile />
-      <Feed />
-      <div className="feature-section">Features</div>
+      <PostSide />
+      <RightSide />
     </div>
   );
 };

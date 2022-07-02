@@ -1,13 +1,11 @@
-import React, { useRef, useState } from 'react';
-import ProfileImage from '../../../img/profileImg.jpg';
-import './postshare.css';
-import {
-  UilScenery,
-  UilPlayCircle,
-  UilLocationPoint,
-  UilSchedule,
-  UilTimes,
-} from '@iconscout/react-unicons';
+import React, { useState, useRef } from 'react';
+import ProfileImage from '../../img/profileImg.jpg';
+import './PostShare.css';
+import { UilScenery } from '@iconscout/react-unicons';
+import { UilPlayCircle } from '@iconscout/react-unicons';
+import { UilLocationPoint } from '@iconscout/react-unicons';
+import { UilSchedule } from '@iconscout/react-unicons';
+import { UilTimes } from '@iconscout/react-unicons';
 
 const PostShare = () => {
   const [image, setImage] = useState(null);
@@ -21,41 +19,44 @@ const PostShare = () => {
       });
     }
   };
-
   return (
-    <div className="post-share">
+    <div className="PostShare">
       <img src={ProfileImage} alt="" />
       <div>
-        <input type="text" placeholder="What's new?" />
-        <div className="post-options">
+        <input type="text" placeholder="What's happening" />
+        <div className="postOptions">
           <div
             className="option"
             style={{ color: 'var(--photo)' }}
             onClick={() => imageRef.current.click()}
           >
-            <UilScenery /> Photo
+            <UilScenery />
+            Photo
           </div>
           <div className="option" style={{ color: 'var(--video)' }}>
-            <UilPlayCircle /> Video
-          </div>
+            <UilPlayCircle />
+            Video
+          </div>{' '}
           <div className="option" style={{ color: 'var(--location)' }}>
-            <UilLocationPoint /> Location
-          </div>
-          <div className="option" style={{ color: 'var(--schedule)' }}>
-            <UilSchedule /> Schedule
+            <UilLocationPoint />
+            Location
+          </div>{' '}
+          <div className="option" style={{ color: 'var(--shedule)' }}>
+            <UilSchedule />
+            Shedule
           </div>
           <button className="button ps-button">Share</button>
           <div style={{ display: 'none' }}>
             <input
               type="file"
-              name="my-image"
+              name="myImage"
               ref={imageRef}
               onChange={onImageChange}
             />
           </div>
         </div>
         {image && (
-          <div className="preview-image">
+          <div className="previewImage">
             <UilTimes onClick={() => setImage(null)} />
             <img src={image.image} alt="" />
           </div>
